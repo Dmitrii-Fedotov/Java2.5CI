@@ -70,8 +70,30 @@
                         </rule>
                     </rules>
                 </configuration>
+            </plugin>
 
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <executions>
+                    <execution>
+                        <id>Spotbugs-check</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>4.4.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
+
     </build>
 </project>
